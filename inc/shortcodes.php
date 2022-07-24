@@ -41,7 +41,7 @@ function goso_recipe_control_actions(){
 		if( get_theme_mod( 'goso_recipe_print_btn' ) ):
 			$printbtn_text = get_theme_mod('goso_recipe_print_btn_text') ? do_shortcode( get_theme_mod('goso_recipe_print_btn_text') ) : esc_html__( 'Print Recipe', 'authow' );
 			?>
-			<a class="goso-recipe-button goso-recipe-print-btn goso-printbutton-recipe" href="#" data-print="<?php echo plugin_dir_url( __FILE__ ) . 'print.css?ver='. PENCI_RECIPE_VER; ?>"><?php if( function_exists( 'goso_fawesome_icon' ) ) { goso_fawesome_icon( 'fas fa-print' ); } else { echo '<i class="fa fa-print"></i>'; } echo $printbtn_text; ?></a>
+			<a class="goso-recipe-button goso-recipe-print-btn goso-printbutton-recipe" href="#" data-print="<?php echo plugin_dir_url( __FILE__ ) . 'print.css?ver='. GOSO_RECIPE_VER; ?>"><?php if( function_exists( 'goso_fawesome_icon' ) ) { goso_fawesome_icon( 'fas fa-print' ); } else { echo '<i class="fa fa-print"></i>'; } echo $printbtn_text; ?></a>
 			<?php
 		endif;
 		echo '</div>';
@@ -167,10 +167,10 @@ function goso_recipe_shortcode_function( $atts, $content = null ) {
 						<?php if( $flag_style == true && ( ! get_theme_mod( 'goso_recipe_print' ) || get_theme_mod( 'goso_recipe_pinterest' ) ) ){ ?>
 						<div class="wrapper-buttons-overlay">
 							<?php if ( get_theme_mod( 'goso_recipe_pinterest' ) ) : ?>
-								<a href="<?php echo $pin_url; ?>" target="_blank" class="goso-recipe-pin" data-print="<?php echo plugin_dir_url( __FILE__ ) . 'print.css?ver=' . PENCI_RECIPE_VER; ?>"><?php if( function_exists( 'goso_fawesome_icon' ) ) { goso_fawesome_icon( 'fas fa-pinterest-p' ); } else { echo '<i class="fa fa-pinterest-p"></i>'; } ?> <?php if( get_theme_mod( 'goso_recipe_pin_text' ) ) { echo do_shortcode( get_theme_mod( 'goso_recipe_pin_text' ) ); } else { esc_html_e( 'Pin', 'authow' ); } ?></a>
+								<a href="<?php echo $pin_url; ?>" target="_blank" class="goso-recipe-pin" data-print="<?php echo plugin_dir_url( __FILE__ ) . 'print.css?ver=' . GOSO_RECIPE_VER; ?>"><?php if( function_exists( 'goso_fawesome_icon' ) ) { goso_fawesome_icon( 'fas fa-pinterest-p' ); } else { echo '<i class="fa fa-pinterest-p"></i>'; } ?> <?php if( get_theme_mod( 'goso_recipe_pin_text' ) ) { echo do_shortcode( get_theme_mod( 'goso_recipe_pin_text' ) ); } else { esc_html_e( 'Pin', 'authow' ); } ?></a>
 							<?php endif; ?>
 							<?php if ( ! get_theme_mod( 'goso_recipe_print' ) ) : ?>
-								<a href="#" class="goso-recipe-print-btn goso-recipe-print-overlay" data-print="<?php echo plugin_dir_url( __FILE__ ) . 'print.css?ver=' . PENCI_RECIPE_VER; ?>"><?php if( function_exists( 'goso_fawesome_icon' ) ) { goso_fawesome_icon( 'fas fa-print' ); } else { echo '<i class="fa fa-print"></i>'; } ?> <?php if( get_theme_mod( 'goso_recipe_print_text' ) ) { echo do_shortcode( get_theme_mod( 'goso_recipe_print_text' ) ); } else { esc_html_e( 'Print', 'authow' ); } ?></a>
+								<a href="#" class="goso-recipe-print-btn goso-recipe-print-overlay" data-print="<?php echo plugin_dir_url( __FILE__ ) . 'print.css?ver=' . GOSO_RECIPE_VER; ?>"><?php if( function_exists( 'goso_fawesome_icon' ) ) { goso_fawesome_icon( 'fas fa-print' ); } else { echo '<i class="fa fa-print"></i>'; } ?> <?php if( get_theme_mod( 'goso_recipe_print_text' ) ) { echo do_shortcode( get_theme_mod( 'goso_recipe_print_text' ) ); } else { esc_html_e( 'Print', 'authow' ); } ?></a>
 							<?php endif; ?>
 							<?php if( $recipe_title && $recipe_style == 'style-3' && get_theme_mod( 'goso_recipe_title_overlay' ) ){ ?>
 							<h2 class="recipe-title-overlay"><?php echo $recipe_title; ?></h2>
@@ -189,7 +189,7 @@ function goso_recipe_shortcode_function( $atts, $content = null ) {
 					<?php endif; ?>
 
 					<?php if ( ! get_theme_mod( 'goso_recipe_print' ) && $recipe_style == 'style-1' ) : ?>
-						<a href="#" class="goso-recipe-print-btn goso-recipe-print" data-print="<?php echo plugin_dir_url( __FILE__ ) . 'print.css?ver=' . PENCI_RECIPE_VER; ?>"><?php if( function_exists( 'goso_fawesome_icon' ) ) { goso_fawesome_icon( 'fas fa-print' ); } else { echo '<i class="fa fa-print"></i>'; } ?> <?php if( get_theme_mod( 'goso_recipe_print_text' ) ) { echo do_shortcode( get_theme_mod( 'goso_recipe_print_text' ) ); } else { esc_html_e( 'Print', 'authow' ); } ?></a>
+						<a href="#" class="goso-recipe-print-btn goso-recipe-print" data-print="<?php echo plugin_dir_url( __FILE__ ) . 'print.css?ver=' . GOSO_RECIPE_VER; ?>"><?php if( function_exists( 'goso_fawesome_icon' ) ) { goso_fawesome_icon( 'fas fa-print' ); } else { echo '<i class="fa fa-print"></i>'; } ?> <?php if( get_theme_mod( 'goso_recipe_print_text' ) ) { echo do_shortcode( get_theme_mod( 'goso_recipe_print_text' ) ); } else { esc_html_e( 'Print', 'authow' ); } ?></a>
 					<?php endif; ?>
 					
 					<?php if ( ! get_theme_mod( 'goso_recipe_rating' ) && $flag_style == true ) : ?>
@@ -256,12 +256,12 @@ function goso_recipe_shortcode_function( $atts, $content = null ) {
 			<div class="wrapper-buttons-style4">
 				<?php if ( get_theme_mod( 'goso_recipe_pinterest' ) ) : ?>
 					<div class="wrapper-col-btn">
-					<a href="<?php echo $pin_url; ?>" target="_blank" class="goso-recipe-pin" data-print="<?php echo plugin_dir_url( __FILE__ ) . 'print.css?ver=' . PENCI_RECIPE_VER; ?>"><?php if( function_exists( 'goso_fawesome_icon' ) ) { goso_fawesome_icon( 'fas fa-pinterest-p' ); } else { echo '<i class="fa fa-pinterest-p"></i>'; } ?> <?php if( get_theme_mod( 'goso_recipe_pin_text' ) ) { echo do_shortcode( get_theme_mod( 'goso_recipe_pin_text' ) ); } else { esc_html_e( 'Pin', 'authow' ); } ?></a>
+					<a href="<?php echo $pin_url; ?>" target="_blank" class="goso-recipe-pin" data-print="<?php echo plugin_dir_url( __FILE__ ) . 'print.css?ver=' . GOSO_RECIPE_VER; ?>"><?php if( function_exists( 'goso_fawesome_icon' ) ) { goso_fawesome_icon( 'fas fa-pinterest-p' ); } else { echo '<i class="fa fa-pinterest-p"></i>'; } ?> <?php if( get_theme_mod( 'goso_recipe_pin_text' ) ) { echo do_shortcode( get_theme_mod( 'goso_recipe_pin_text' ) ); } else { esc_html_e( 'Pin', 'authow' ); } ?></a>
 					</div>
 				<?php endif; ?>
 				<?php if ( ! get_theme_mod( 'goso_recipe_print' ) ) : ?>
 					<div class="wrapper-col-btn">
-					<a href="#" class="goso-recipe-print-btn goso-recipe-print-overlay" data-print="<?php echo plugin_dir_url( __FILE__ ) . 'print.css?ver=' . PENCI_RECIPE_VER; ?>"><?php if( function_exists( 'goso_fawesome_icon' ) ) { goso_fawesome_icon( 'fas fa-print' ); } else { echo '<i class="fa fa-print"></i>'; } ?> <?php if( get_theme_mod( 'goso_recipe_print_text' ) ) { echo do_shortcode( get_theme_mod( 'goso_recipe_print_text' ) ); } else { esc_html_e( 'Print', 'authow' ); } ?></a>
+					<a href="#" class="goso-recipe-print-btn goso-recipe-print-overlay" data-print="<?php echo plugin_dir_url( __FILE__ ) . 'print.css?ver=' . GOSO_RECIPE_VER; ?>"><?php if( function_exists( 'goso_fawesome_icon' ) ) { goso_fawesome_icon( 'fas fa-print' ); } else { echo '<i class="fa fa-print"></i>'; } ?> <?php if( get_theme_mod( 'goso_recipe_print_text' ) ) { echo do_shortcode( get_theme_mod( 'goso_recipe_print_text' ) ); } else { esc_html_e( 'Print', 'authow' ); } ?></a>
 					</div>
 				<?php endif; ?>
 			</div>

@@ -14,7 +14,7 @@ Author URI: http://themeforest.net/user/gosodesign?ref=gosodesign
  * @since 1.0
  */
 
-define('PENCI_RECIPE_VER', '3.3'); 
+define('GOSO_RECIPE_VER', '3.3'); 
 
 add_action( 'plugins_loaded', 'goso_recipe_load_textdomain' );
 function goso_recipe_load_textdomain() {
@@ -45,16 +45,16 @@ add_action( 'admin_enqueue_scripts', 'goso_load_admin_metabox_style' );
 add_action( 'wp_enqueue_scripts', 'goso_register_recipe_print_scripts', 50 );
 
 function goso_register_recipe_print_scripts(){
-	wp_enqueue_style( 'goso-recipe-css', plugin_dir_url( __FILE__ ) . 'css/recipe.css', array(), PENCI_RECIPE_VER );
-	wp_register_script( 'jquery-recipe-print', plugin_dir_url( __FILE__ ) . 'js/print.js', array('jquery'), PENCI_RECIPE_VER, true );
-	wp_enqueue_script( 'jquery-recipe-rateyo', plugin_dir_url( __FILE__ ) . 'js/jquery.rateyo.min.js', array('jquery'), PENCI_RECIPE_VER, true );
+	wp_enqueue_style( 'goso-recipe-css', plugin_dir_url( __FILE__ ) . 'css/recipe.css', array(), GOSO_RECIPE_VER );
+	wp_register_script( 'jquery-recipe-print', plugin_dir_url( __FILE__ ) . 'js/print.js', array('jquery'), GOSO_RECIPE_VER, true );
+	wp_enqueue_script( 'jquery-recipe-rateyo', plugin_dir_url( __FILE__ ) . 'js/jquery.rateyo.min.js', array('jquery'), GOSO_RECIPE_VER, true );
 	if ( ! get_theme_mod( 'goso_recipe_rating' ) ) {
-	wp_enqueue_script( 'goso_rateyo', plugin_dir_url( __FILE__ ) . 'js/rating_recipe.js', array('jquery'), PENCI_RECIPE_VER, true );
+	wp_enqueue_script( 'goso_rateyo', plugin_dir_url( __FILE__ ) . 'js/rating_recipe.js', array('jquery'), GOSO_RECIPE_VER, true );
 	$localize_script = array(
 		'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 		'nonce'   => wp_create_nonce( 'ajax-nonce' ),
 	);
-	wp_localize_script( 'goso_rateyo', 'PENCI', $localize_script );
+	wp_localize_script( 'goso_rateyo', 'GOSO', $localize_script );
 	}
 }
 

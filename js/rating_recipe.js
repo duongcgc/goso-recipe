@@ -17,9 +17,9 @@ if ( jQuery(".goso_rateyo").length ) {
 
 				jQuery.ajax({
 					type: "POST",
-					url: PENCI.ajaxUrl,
+					url: GOSO.ajaxUrl,
 					dataType: 'html',
-					data: { action: 'goso_rateyo', nonce: PENCI.nonce, postid: postid, rating: rating },
+					data: { action: 'goso_rateyo', nonce: GOSO.nonce, postid: postid, rating: rating },
 					success: function( data ) {
 						var parent = jQuery(this).parent(),
 							new_rate = ( total + rating ) / ( people_numb + 1 );
